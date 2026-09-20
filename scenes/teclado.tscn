@@ -1,0 +1,745 @@
+[gd_scene format=3 uid="uid://42qn7unb6av3"]
+
+[ext_resource type="PackedScene" uid="uid://dwiskxvh6hutb" path="res://scenes/alfabet/alfabet_letter.tscn" id="1_2uyk8"]
+[ext_resource type="Script" uid="uid://d11ksvh28s7t4" path="res://scripts/teclado.gd" id="1_hxihd"]
+[ext_resource type="Script" uid="uid://bg8wn358egtp7" path="res://scripts/tecla.gd" id="1_miw46"]
+[ext_resource type="Texture2D" uid="uid://ct8b8b6r2qga8" path="res://assets/ui/buttons.png" id="3_tf58b"]
+[ext_resource type="Texture2D" uid="uid://c43mjucpqidl" path="res://assets/ui/icons.png" id="4_hxihd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw5rj"]
+atlas = ExtResource("4_hxihd")
+region = Rect2(0, 896, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5pvp"]
+atlas = ExtResource("4_hxihd")
+region = Rect2(128, 896, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tr3x"]
+atlas = ExtResource("4_hxihd")
+region = Rect2(256, 896, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wirkn"]
+atlas = ExtResource("4_hxihd")
+region = Rect2(384, 896, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57qmd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qw5rj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5pvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tr3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wirkn")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tf58b"]
+atlas = ExtResource("3_tf58b")
+region = Rect2(0, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxihd"]
+atlas = ExtResource("3_tf58b")
+region = Rect2(192, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_204xe"]
+atlas = ExtResource("3_tf58b")
+region = Rect2(384, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggqhl"]
+atlas = ExtResource("3_tf58b")
+region = Rect2(576, 576, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tf58b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxihd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_204xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggqhl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="teclado" type="Node2D" unique_id=1660004085]
+position = Vector2(32, 0)
+scale = Vector2(0.9, 0.9)
+script = ExtResource("1_hxihd")
+
+[node name="coluna01" type="Node2D" parent="." unique_id=212042309]
+position = Vector2(0, 17.777779)
+
+[node name="tecla" type="Node2D" parent="coluna01" unique_id=1987614118]
+position = Vector2(657.7778, 17.777779)
+script = ExtResource("1_miw46")
+letter = false
+value = "back"
+scale_anim = Vector2(1.6, 1.6)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="coluna01/tecla" unique_id=1874204034]
+position = Vector2(17.777779, 17.777779)
+sprite_frames = SubResource("SpriteFrames_57qmd")
+autoplay = "default"
+frame_progress = 0.66259426
+
+[node name="button" type="Button" parent="coluna01/tecla" unique_id=50170484]
+offset_left = -35.555542
+offset_top = -35.555557
+offset_right = 88.888916
+offset_bottom = 53.333336
+flat = true
+
+[node name="coluna1" type="Node2D" parent="." unique_id=1632129107]
+position = Vector2(0, 88.88887)
+
+[node name="tecla" type="Node2D" parent="coluna1" unique_id=661931583]
+position = Vector2(0, 32)
+script = ExtResource("1_miw46")
+value = "Q"
+
+[node name="alfabet-letter" parent="coluna1/tecla" unique_id=1910100872 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna1/tecla" unique_id=1740394175]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla2" type="Node2D" parent="coluna1" unique_id=2136347857]
+position = Vector2(80, 32)
+script = ExtResource("1_miw46")
+value = "W"
+
+[node name="alfabet-letter" parent="coluna1/tecla2" unique_id=129711232 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna1/tecla2" unique_id=1255315411]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla3" type="Node2D" parent="coluna1" unique_id=925900811]
+position = Vector2(160, 32)
+script = ExtResource("1_miw46")
+value = "E"
+
+[node name="alfabet-letter" parent="coluna1/tecla3" unique_id=2001946423 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna1/tecla3" unique_id=705190781]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla4" type="Node2D" parent="coluna1" unique_id=300232949]
+position = Vector2(240, 32)
+script = ExtResource("1_miw46")
+value = "R"
+
+[node name="alfabet-letter" parent="coluna1/tecla4" unique_id=1511497144 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna1/tecla4" unique_id=750196633]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla5" type="Node2D" parent="coluna1" unique_id=1012994586]
+position = Vector2(320, 32)
+script = ExtResource("1_miw46")
+value = "T"
+
+[node name="alfabet-letter" parent="coluna1/tecla5" unique_id=1382477801 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna1/tecla5" unique_id=1909531558]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla6" type="Node2D" parent="coluna1" unique_id=6142506]
+position = Vector2(400, 32)
+script = ExtResource("1_miw46")
+value = "Y"
+
+[node name="alfabet-letter" parent="coluna1/tecla6" unique_id=490615529 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna1/tecla6" unique_id=1984081152]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla7" type="Node2D" parent="coluna1" unique_id=731936800]
+position = Vector2(480, 32)
+script = ExtResource("1_miw46")
+value = "U"
+
+[node name="alfabet-letter" parent="coluna1/tecla7" unique_id=495057548 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna1/tecla7" unique_id=622806152]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla8" type="Node2D" parent="coluna1" unique_id=1272405319]
+position = Vector2(560, 32)
+script = ExtResource("1_miw46")
+value = "I"
+
+[node name="alfabet-letter" parent="coluna1/tecla8" unique_id=1489895329 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna1/tecla8" unique_id=131390399]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla9" type="Node2D" parent="coluna1" unique_id=1802002553]
+position = Vector2(640, 32)
+script = ExtResource("1_miw46")
+value = "O"
+
+[node name="alfabet-letter" parent="coluna1/tecla9" unique_id=495351253 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna1/tecla9" unique_id=454171605]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla10" type="Node2D" parent="coluna1" unique_id=1879269005]
+position = Vector2(720, 32)
+script = ExtResource("1_miw46")
+value = "P"
+
+[node name="alfabet-letter" parent="coluna1/tecla10" unique_id=2111763690 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna1/tecla10" unique_id=86055274]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="coluna2" type="Node2D" parent="." unique_id=675210751]
+position = Vector2(35.555557, 177.77776)
+
+[node name="tecla" type="Node2D" parent="coluna2" unique_id=1196229864]
+position = Vector2(0, 32)
+script = ExtResource("1_miw46")
+
+[node name="alfabet-letter" parent="coluna2/tecla" unique_id=2061054871 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna2/tecla" unique_id=116011456]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla2" type="Node2D" parent="coluna2" unique_id=1648218395]
+position = Vector2(80, 32)
+script = ExtResource("1_miw46")
+value = "S"
+
+[node name="alfabet-letter" parent="coluna2/tecla2" unique_id=617724165 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna2/tecla2" unique_id=50574490]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla3" type="Node2D" parent="coluna2" unique_id=185867732]
+position = Vector2(160, 32)
+script = ExtResource("1_miw46")
+value = "D"
+
+[node name="alfabet-letter" parent="coluna2/tecla3" unique_id=970776493 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna2/tecla3" unique_id=546990207]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla4" type="Node2D" parent="coluna2" unique_id=177778201]
+position = Vector2(240, 32)
+script = ExtResource("1_miw46")
+value = "F"
+
+[node name="alfabet-letter" parent="coluna2/tecla4" unique_id=1464017054 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna2/tecla4" unique_id=826907654]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla5" type="Node2D" parent="coluna2" unique_id=775430243]
+position = Vector2(320, 32)
+script = ExtResource("1_miw46")
+value = "G"
+
+[node name="alfabet-letter" parent="coluna2/tecla5" unique_id=881907408 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna2/tecla5" unique_id=1947574963]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla6" type="Node2D" parent="coluna2" unique_id=453270180]
+position = Vector2(400, 32)
+script = ExtResource("1_miw46")
+value = "H"
+
+[node name="alfabet-letter" parent="coluna2/tecla6" unique_id=1644111140 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna2/tecla6" unique_id=1753634769]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla7" type="Node2D" parent="coluna2" unique_id=2101326602]
+position = Vector2(480, 32)
+script = ExtResource("1_miw46")
+value = "J"
+
+[node name="alfabet-letter" parent="coluna2/tecla7" unique_id=537596608 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna2/tecla7" unique_id=1723832267]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla8" type="Node2D" parent="coluna2" unique_id=1469614503]
+position = Vector2(560, 32)
+script = ExtResource("1_miw46")
+value = "K"
+
+[node name="alfabet-letter" parent="coluna2/tecla8" unique_id=422287871 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna2/tecla8" unique_id=1107012970]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla9" type="Node2D" parent="coluna2" unique_id=1660398238]
+position = Vector2(640, 32)
+script = ExtResource("1_miw46")
+value = "L"
+
+[node name="alfabet-letter" parent="coluna2/tecla9" unique_id=2100558242 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna2/tecla9" unique_id=1770919594]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="coluna3" type="Node2D" parent="." unique_id=1494711244]
+position = Vector2(124.44445, 266.6667)
+
+[node name="tecla" type="Node2D" parent="coluna3" unique_id=263073406]
+position = Vector2(0, 32)
+script = ExtResource("1_miw46")
+value = "Z"
+
+[node name="alfabet-letter" parent="coluna3/tecla" unique_id=1039460337 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna3/tecla" unique_id=63962769]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla2" type="Node2D" parent="coluna3" unique_id=348342459]
+position = Vector2(80, 32)
+script = ExtResource("1_miw46")
+value = "X"
+
+[node name="alfabet-letter" parent="coluna3/tecla2" unique_id=457882297 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna3/tecla2" unique_id=441317185]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla3" type="Node2D" parent="coluna3" unique_id=1346790049]
+position = Vector2(160, 32)
+script = ExtResource("1_miw46")
+value = "C"
+
+[node name="alfabet-letter" parent="coluna3/tecla3" unique_id=75994274 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna3/tecla3" unique_id=2054904199]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla4" type="Node2D" parent="coluna3" unique_id=370443929]
+position = Vector2(240, 32)
+script = ExtResource("1_miw46")
+value = "V"
+
+[node name="alfabet-letter" parent="coluna3/tecla4" unique_id=1306732808 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna3/tecla4" unique_id=2057768731]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla5" type="Node2D" parent="coluna3" unique_id=1603989639]
+position = Vector2(320, 32)
+script = ExtResource("1_miw46")
+value = "B"
+
+[node name="alfabet-letter" parent="coluna3/tecla5" unique_id=1063515244 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna3/tecla5" unique_id=554648220]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla6" type="Node2D" parent="coluna3" unique_id=48106261]
+position = Vector2(400, 32)
+script = ExtResource("1_miw46")
+value = "N"
+
+[node name="alfabet-letter" parent="coluna3/tecla6" unique_id=1036911897 instance=ExtResource("1_2uyk8")]
+position = Vector2(1.1111073, 12.444422)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna3/tecla6" unique_id=1836032947]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla7" type="Node2D" parent="coluna3" unique_id=704793641]
+position = Vector2(480, 32)
+script = ExtResource("1_miw46")
+value = "M"
+
+[node name="alfabet-letter" parent="coluna3/tecla7" unique_id=2031270081 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna3/tecla7" unique_id=895112834]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="coluna4" type="Node2D" parent="." unique_id=1022504901]
+position = Vector2(88.88889, 284.44446)
+
+[node name="tecla" type="Node2D" parent="coluna4" unique_id=1915967034]
+position = Vector2(248.88892, 124.44445)
+script = ExtResource("1_miw46")
+letter = false
+value = " "
+scale_anim = Vector2(1.4, 1.4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="coluna4/tecla" unique_id=1847387790]
+position = Vector2(-3.555561, 12.799988)
+scale = Vector2(2, 1.8)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+
+[node name="button" type="Button" parent="coluna4/tecla" unique_id=348005427]
+offset_left = -145.7778
+offset_top = -22.755566
+offset_right = 138.66672
+offset_bottom = 48.35555
+flat = true
+
+[node name="tecla2" type="Node2D" parent="coluna4" unique_id=1175913993]
+position = Vector2(-53.333336, 124.44444)
+script = ExtResource("1_miw46")
+value = "!"
+
+[node name="alfabet-letter" parent="coluna4/tecla2" unique_id=1433237289 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna4/tecla2" unique_id=657398163]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla5" type="Node2D" parent="coluna4" unique_id=870083858]
+position = Vector2(17.777775, 124.44444)
+script = ExtResource("1_miw46")
+value = "?"
+
+[node name="alfabet-letter" parent="coluna4/tecla5" unique_id=263779104 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 16)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna4/tecla5" unique_id=26348673]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla3" type="Node2D" parent="coluna4" unique_id=418890942]
+position = Vector2(497.77777, 124.44444)
+script = ExtResource("1_miw46")
+value = ","
+
+[node name="alfabet-letter" parent="coluna4/tecla3" unique_id=1317341569 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 5.722046e-06)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna4/tecla3" unique_id=1354989834]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[node name="tecla4" type="Node2D" parent="coluna4" unique_id=1528660350]
+position = Vector2(586.6667, 124.44444)
+script = ExtResource("1_miw46")
+value = "."
+
+[node name="alfabet-letter" parent="coluna4/tecla4" unique_id=6361601 instance=ExtResource("1_2uyk8")]
+position = Vector2(0, 5.722046e-06)
+scale = Vector2(1, 1)
+display = "a"
+
+[node name="button" type="Button" parent="coluna4/tecla4" unique_id=241569664]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[connection signal="button_down" from="coluna01/tecla/button" to="coluna01/tecla" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna01/tecla/button" to="coluna01/tecla" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna01/tecla/button" to="coluna01/tecla" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna1/tecla/button" to="coluna1/tecla" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna1/tecla/button" to="coluna1/tecla" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna1/tecla/button" to="coluna1/tecla" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna1/tecla2/button" to="coluna1/tecla2" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna1/tecla2/button" to="coluna1/tecla2" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna1/tecla2/button" to="coluna1/tecla2" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna1/tecla3/button" to="coluna1/tecla3" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna1/tecla3/button" to="coluna1/tecla3" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna1/tecla3/button" to="coluna1/tecla3" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna1/tecla4/button" to="coluna1/tecla4" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna1/tecla4/button" to="coluna1/tecla4" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna1/tecla4/button" to="coluna1/tecla4" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna1/tecla5/button" to="coluna1/tecla5" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna1/tecla5/button" to="coluna1/tecla5" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna1/tecla5/button" to="coluna1/tecla5" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna1/tecla6/button" to="coluna1/tecla6" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna1/tecla6/button" to="coluna1/tecla6" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna1/tecla6/button" to="coluna1/tecla6" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna1/tecla7/button" to="coluna1/tecla7" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna1/tecla7/button" to="coluna1/tecla7" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna1/tecla7/button" to="coluna1/tecla7" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna1/tecla8/button" to="coluna1/tecla8" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna1/tecla8/button" to="coluna1/tecla8" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna1/tecla8/button" to="coluna1/tecla8" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna1/tecla9/button" to="coluna1/tecla9" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna1/tecla9/button" to="coluna1/tecla9" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna1/tecla9/button" to="coluna1/tecla9" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna1/tecla10/button" to="coluna1/tecla10" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna1/tecla10/button" to="coluna1/tecla10" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna1/tecla10/button" to="coluna1/tecla10" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna2/tecla/button" to="coluna2/tecla" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna2/tecla/button" to="coluna2/tecla" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna2/tecla/button" to="coluna2/tecla" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna2/tecla2/button" to="coluna2/tecla2" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna2/tecla2/button" to="coluna2/tecla2" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna2/tecla2/button" to="coluna2/tecla2" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna2/tecla3/button" to="coluna2/tecla3" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna2/tecla3/button" to="coluna2/tecla3" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna2/tecla3/button" to="coluna2/tecla3" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna2/tecla4/button" to="coluna2/tecla4" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna2/tecla4/button" to="coluna2/tecla4" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna2/tecla4/button" to="coluna2/tecla4" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna2/tecla5/button" to="coluna2/tecla5" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna2/tecla5/button" to="coluna2/tecla5" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna2/tecla5/button" to="coluna2/tecla5" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna2/tecla6/button" to="coluna2/tecla6" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna2/tecla6/button" to="coluna2/tecla6" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna2/tecla6/button" to="coluna2/tecla6" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna2/tecla7/button" to="coluna2/tecla7" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna2/tecla7/button" to="coluna2/tecla7" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna2/tecla7/button" to="coluna2/tecla7" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna2/tecla8/button" to="coluna2/tecla8" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna2/tecla8/button" to="coluna2/tecla8" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna2/tecla8/button" to="coluna2/tecla8" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna2/tecla9/button" to="coluna2/tecla9" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna2/tecla9/button" to="coluna2/tecla9" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna2/tecla9/button" to="coluna2/tecla9" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna3/tecla/button" to="coluna3/tecla" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna3/tecla/button" to="coluna3/tecla" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna3/tecla/button" to="coluna3/tecla" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna3/tecla2/button" to="coluna3/tecla2" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna3/tecla2/button" to="coluna3/tecla2" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna3/tecla2/button" to="coluna3/tecla2" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna3/tecla3/button" to="coluna3/tecla3" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna3/tecla3/button" to="coluna3/tecla3" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna3/tecla3/button" to="coluna3/tecla3" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna3/tecla4/button" to="coluna3/tecla4" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna3/tecla4/button" to="coluna3/tecla4" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna3/tecla4/button" to="coluna3/tecla4" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna3/tecla5/button" to="coluna3/tecla5" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna3/tecla5/button" to="coluna3/tecla5" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna3/tecla5/button" to="coluna3/tecla5" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna3/tecla6/button" to="coluna3/tecla6" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna3/tecla6/button" to="coluna3/tecla6" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna3/tecla6/button" to="coluna3/tecla6" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna3/tecla7/button" to="coluna3/tecla7" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna3/tecla7/button" to="coluna3/tecla7" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna3/tecla7/button" to="coluna3/tecla7" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna4/tecla/button" to="coluna4/tecla" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna4/tecla/button" to="coluna4/tecla" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna4/tecla/button" to="coluna4/tecla" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna4/tecla2/button" to="coluna4/tecla2" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna4/tecla2/button" to="coluna4/tecla2" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna4/tecla2/button" to="coluna4/tecla2" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna4/tecla5/button" to="coluna4/tecla5" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna4/tecla5/button" to="coluna4/tecla5" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna4/tecla5/button" to="coluna4/tecla5" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna4/tecla3/button" to="coluna4/tecla3" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna4/tecla3/button" to="coluna4/tecla3" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna4/tecla3/button" to="coluna4/tecla3" method="_on_button_pressed"]
+[connection signal="button_down" from="coluna4/tecla4/button" to="coluna4/tecla4" method="_on_button_button_down"]
+[connection signal="button_up" from="coluna4/tecla4/button" to="coluna4/tecla4" method="_on_button_button_up"]
+[connection signal="pressed" from="coluna4/tecla4/button" to="coluna4/tecla4" method="_on_button_pressed"]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dn43mdufdnek5"]
+
+[ext_resource type="Script" uid="uid://bohul80lpd22m" path="res://scripts/mouse_effect.gd" id="1_o5qli"]
+
+[node name="main" type="Node2D" unique_id=1581506665]
+
+[node name="mouse_effect" type="Node2D" parent="." unique_id=1557958260]
+script = ExtResource("1_o5qli")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dn43mdufdnek5"]
+
+[ext_resource type="Script" uid="uid://bohul80lpd22m" path="res://scripts/mouse_effect.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://cfucrpnnirxi7" path="res://scenes/card.tscn" id="2_0wfyh"]
+
+[node name="main" type="Node2D" unique_id=1581506665]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=621018779]
+offset_right = 744.0
+offset_bottom = 1296.0
+
+[node name="mouse_effect" type="Node2D" parent="." unique_id=1557958260]
+script = ExtResource("1_o5qli")
+
+[node name="card" parent="." unique_id=1761437999 instance=ExtResource("2_0wfyh")]
+position = Vector2(360, 576)
+animation = &"love3open"
+frame_progress = 0.0

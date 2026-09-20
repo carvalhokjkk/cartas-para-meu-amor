@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dwiskxvh6hutb"]
+
+[ext_resource type="Texture2D" uid="uid://cd58sgl2ylgqt" path="res://assets/afabet/alfabet_spritesheet.png" id="1_wqr2n"]
+[ext_resource type="Script" uid="uid://b86c7u5umk0sq" path="res://scripts/alfabet_letter.gd" id="2_wqr2n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_na7ar"]
+atlas = ExtResource("1_wqr2n")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ceqk4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_na7ar")
+}],
+"loop": 1,
+"name": &";",
+"speed": 5.0
+}]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wqr2n"]
+load_path = "res://.godot/imported/alfabet_spritesheet.png-c328cd9cf9d4c8a8058d3b46f82273a4.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clym6"]
+atlas = SubResource("CompressedTexture2D_wqr2n")
+region = Rect2(0, 0, 64, 64)
+
+[node name="alfabet-letter" type="AnimatedSprite2D" unique_id=544219292]
+position = Vector2(-3.8146973e-06, -3.8146973e-06)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_ceqk4")
+animation = &";"
+script = ExtResource("2_wqr2n")
+textureassa = SubResource("AtlasTexture_clym6")
