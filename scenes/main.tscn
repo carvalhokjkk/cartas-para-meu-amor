@@ -922,7 +922,7 @@ metadata/_custom_type_script = "uid://c035hrqyeuyri"
 position = Vector2(-57, -23)
 sprite_frames = SubResource("SpriteFrames_d0u6y")
 autoplay = "default"
-frame_progress = 0.97677076
+frame_progress = 0.34712827
 script = ExtResource("9_pm3ni")
 
 [node name="password" type="Node2D" parent="login" unique_id=631367777]
