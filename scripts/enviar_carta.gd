@@ -1,12 +1,15 @@
 extends buttons
 
+signal enviada
 
 func _ready() -> void:
 	hide()
 	set_configs()
 
 func _on_on_pressed() -> void:
-	print($"../paper/alfabet".text)
+	var content = $"../paper/alfabet".text
+	enviada.emit(content)
+	$"../close_button".hide()
 	$"../paper/alfabet".text = ''
 	$"../teclado".value = ''
 	$"../teclado_anim".play_backwards("in")

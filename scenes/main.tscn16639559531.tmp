@@ -12,8 +12,6 @@
 [ext_resource type="Script" uid="uid://ddgqmm03ohorh" path="res://scripts/digitar.gd" id="7_choun"]
 [ext_resource type="PackedScene" uid="uid://42qn7unb6av3" path="res://scenes/teclado.tscn" id="7_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://bwrtijjcflipx" path="res://assets/cartas/paper.png" id="8_choun"]
-[ext_resource type="Texture2D" uid="uid://bnmrokfth6cpr" path="res://assets/ui/text-edit-bar.png" id="8_jscy8"]
-[ext_resource type="Script" uid="uid://b6bi5sgsnwkgn" path="res://scripts/text-edit-bar.gd" id="9_pm3ni"]
 [ext_resource type="Script" uid="uid://blh38b8uv4tcy" path="res://scripts/alfabet.gd" id="10_eb6dy"]
 [ext_resource type="Script" uid="uid://bic5xphlncm63" path="res://scripts/enviar_carta.gd" id="11_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://c43mjucpqidl" path="res://assets/ui/icons.png" id="11_ya4ey"]
@@ -22,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c1waschbpfyu0" path="res://assets/cartas/3open.png" id="15_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://si87pvd2kt1o" path="res://assets/ui/pen.png" id="16_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://dwiskxvh6hutb" path="res://scenes/alfabet/alfabet_letter.tscn" id="17_muem4"]
-[ext_resource type="Texture2D" uid="uid://cyvys1emw0ep" path="res://assets/ui/login-ui.png" id="20_gqmmt"]
+[ext_resource type="Texture2D" uid="uid://cyvys1emw0ep" path="res://assets/ui/19 Sem Título_spritesheet.png" id="20_gqmmt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fuf3a"]
 atlas = ExtResource("20_gqmmt")
@@ -157,54 +155,6 @@ animations = [{
 "loop": 1,
 "name": &"new_animation_2",
 "speed": 6.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o7ddy"]
-atlas = ExtResource("8_jscy8")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0loja"]
-atlas = ExtResource("8_jscy8")
-region = Rect2(192, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ids8r"]
-atlas = ExtResource("8_jscy8")
-region = Rect2(384, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dnhof"]
-atlas = ExtResource("8_jscy8")
-region = Rect2(576, 0, 192, 192)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_d0u6y"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o7ddy")
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0loja")
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ids8r")
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dnhof")
-}, {
-"duration": 1.0,
-"texture": null
-}],
-"loop": 1,
-"name": &"default",
-"speed": 4.0
 }]
 
 [sub_resource type="Animation" id="Animation_choun"]
@@ -918,13 +868,6 @@ script = ExtResource("3_sugp2")
 anim = false
 metadata/_custom_type_script = "uid://c035hrqyeuyri"
 
-[node name="bar" type="AnimatedSprite2D" parent="login/username" unique_id=1915852600]
-position = Vector2(-57, -23)
-sprite_frames = SubResource("SpriteFrames_d0u6y")
-autoplay = "default"
-frame_progress = 0.97677076
-script = ExtResource("9_pm3ni")
-
 [node name="password" type="Node2D" parent="login" unique_id=631367777]
 position = Vector2(352, 544)
 
@@ -949,7 +892,7 @@ scale = Vector2(0.635, 0.635)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"new_animation_2"
 autoplay = "new_animation_2"
-frame_progress = 0.053239066
+frame_progress = 0.77289355
 
 [node name="password_range" type="Control" parent="login/password" unique_id=717904395]
 layout_mode = 3
@@ -961,13 +904,6 @@ offset_bottom = 32.0
 script = ExtResource("3_sugp2")
 anim = false
 metadata/_custom_type_script = "uid://c035hrqyeuyri"
-
-[node name="bar" type="AnimatedSprite2D" parent="login/password" unique_id=1038649852]
-position = Vector2(-57, -23)
-sprite_frames = SubResource("SpriteFrames_d0u6y")
-autoplay = "default"
-frame_progress = 0.80044085
-script = ExtResource("9_pm3ni")
 
 [node name="confirm" type="Node2D" parent="login" unique_id=99585024]
 position = Vector2(352, 768)
@@ -1151,6 +1087,7 @@ autoplay = "default"
 frame_progress = 0.8426417
 
 [node name="nocards" type="Node2D" parent="." unique_id=2121782010]
+visible = false
 
 [node name="mensagem" type="Node2D" parent="nocards" unique_id=1116340838]
 z_index = -2

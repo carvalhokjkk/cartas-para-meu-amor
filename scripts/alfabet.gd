@@ -7,7 +7,7 @@ var y_gap := 60
 var wrap_limit := 10
 var wrap_y_limit = 10
 
-var text := ''
+@export var text := 'teste'
 
 func write():
 	text = text.replace('? ', '?')
